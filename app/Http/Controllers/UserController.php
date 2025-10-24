@@ -20,6 +20,19 @@ class UserController extends Controller
         return redirect('/');
     }
 
+    public function login(Request $request,User $user)
+    {
+        $incomingFields = $request->validate([
+            'email' => 'required|email',
+            'password' => 'required',
+        ]);
+        if (auth()->attempt(['email' => $incomingFields['email'],'password' => $incomingFields['password']]))
+        {
+            $request->session()->regenerate();
+        }
+        return redirect('/');
+    }
+
     public function logout(Request $request)
     {
         auth()->logout();
