@@ -23,6 +23,9 @@
     body{
         background-color: #000000;
     }
+    p{
+        color: #FFFFFF;
+    }
     h1{
         text-align: center;
         color: #ff0000;
@@ -62,9 +65,15 @@
 <body>
     <header>
         <h1>Post App</h1>
+        @auth
+            <form action="/logout" method="POST">
+                @csrf
+                <button>Logout</button>
+            </form>
+        @endauth
     </header>
     @auth
-        <p>You are logged in!</p>
+
     @else
     <section>
         <div class="register">
@@ -73,9 +82,9 @@
                 <label>Register</label>
                 <br>
                 <br>
-                <input type="text" name="full_name" placeholder="Full Name" class="field">
+                <input type="text" name="name" placeholder="Full Name" class="field">
                 <br>
-                <input type="email" name="email" placeholder="Email" class="field">
+                <input type="text" name="email" placeholder="Email" class="field">
                 <br>
                 <input type="password" name="password" placeholder="Password" class="field">
                 <br>
@@ -91,7 +100,7 @@
                 <label>Login</label>
                 <br>
                 <br>
-                <input type="email" placeholder="Email" name="email" class="field">
+                <input type="text" placeholder="Email" name="email" class="field">
                 <br>
                 <input type="password" placeholder="Password" name="password" class="field">
                 <br>
