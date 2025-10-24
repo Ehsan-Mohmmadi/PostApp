@@ -63,6 +63,9 @@
     <header>
         <h1>Post App</h1>
     </header>
+    @auth
+        <p>You are logged in!</p>
+    @else
     <section>
         <div class="register">
             <form action="/register" method="post">
@@ -96,5 +99,6 @@
             </form>
         </div>
     </section>
+    @endauth
 </body>
 </html>
