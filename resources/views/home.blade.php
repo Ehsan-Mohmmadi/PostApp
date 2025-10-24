@@ -9,7 +9,7 @@
 </head>
 <style>
 
-    .bitcount-grid-single-<uniquifier> {
+    .bitcount-grid-single{
                                font-family: "Bitcount Grid Single", system-ui;
                                font-optical-sizing: auto;
                                font-weight: 200;
