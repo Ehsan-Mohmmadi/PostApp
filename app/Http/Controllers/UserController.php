@@ -11,12 +11,18 @@ class UserController extends Controller
     {
         $incomingFields = $request->validate([
             'name' => 'required',
-            'email' => 'required|email',
+            'email' => 'required|email|unique:users',
             'password' => 'required',
         ]);
         $incomingFields['password'] = bcrypt($incomingFields['password']);
         $user = User::create($incomingFields);
         auth()->login($user);
+        return redirect('/');
+    }
+
+    public function logout(Request $request)
+    {
+        auth()->logout();
         return redirect('/');
     }
 }
