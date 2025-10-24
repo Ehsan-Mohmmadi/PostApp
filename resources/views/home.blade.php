@@ -65,29 +65,33 @@
     </header>
     <section>
         <div class="register">
-            <label>Register</label>
-            <br>
-            <br>
-            <input type="text" name="full_name" placeholder="Full Name" class="field">
-            <br>
-            <input type="email" name="email" placeholder="Email" class="field">
-            <br>
-            <input type="password" name="password" placeholder="Password" class="field">
-            <br>
-            <button>Register</button>
+            <form action="/register" method="post">
+                <label>Register</label>
+                <br>
+                <br>
+                <input type="text" name="full_name" placeholder="Full Name" class="field">
+                <br>
+                <input type="email" name="email" placeholder="Email" class="field">
+                <br>
+                <input type="password" name="password" placeholder="Password" class="field">
+                <br>
+                <button>Register</button>
+            </form>
         </div>
     </section>
     <br>
     <section>
         <div class="register">
-            <label>Login</label>
-            <br>
-            <br>
-            <input type="email" placeholder="Email" name="email" class="field">
-            <br>
-            <input type="password" placeholder="Password" name="password" class="field">
-            <br>
-            <button>Login</button>
+            <form action="/login" method="POST">
+                <label>Login</label>
+                <br>
+                <br>
+                <input type="email" placeholder="Email" name="email" class="field">
+                <br>
+                <input type="password" placeholder="Password" name="password" class="field">
+                <br>
+                <button>Login</button>
+            </form>
         </div>
     </section>
 </body>
