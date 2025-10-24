@@ -66,6 +66,7 @@
     <section>
         <div class="register">
             <form action="/register" method="post">
+                @csrf
                 <label>Register</label>
                 <br>
                 <br>
@@ -83,6 +84,7 @@
     <section>
         <div class="register">
             <form action="/login" method="POST">
+                @csrf
                 <label>Login</label>
                 <br>
                 <br>
